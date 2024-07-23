@@ -6,10 +6,10 @@ const feature = loadFeature('C:/Users/edurne.munozlaparra/OneDrive - Travelport/
 defineFeature(feature, (test) => {
   test('Starting screen - Board size', ({ given, then, pending }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
     then(/^the board should have "(.*)" rows and "(.*)" columns$/, (rows, columns) => {
-      pending()
+      expect(steps.boardSize(rows, columns)).toBe(true)
     })
   })
 
