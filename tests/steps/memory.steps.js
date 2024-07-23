@@ -9,4 +9,3 @@ export function boardSize (rows, columns) {
   const cards = screen.getAllByTestId('card')
   return cards.length === rows * columns
 }
-
