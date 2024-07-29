@@ -1,5 +1,5 @@
 export default function Card () {
   return (
-    <button className='card' data-testid='card' />
+    <button className='card covered' data-testid='card' />
   )
 }
