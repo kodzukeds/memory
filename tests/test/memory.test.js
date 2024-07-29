@@ -4,7 +4,7 @@ import * as steps from '../steps/memory.steps'
 const feature = loadFeature('C:/Users/edurne.munozlaparra/OneDrive - Travelport/Documents/DUAL/memory/tests/features/memory.feature')
 
 defineFeature(feature, (test) => {
-  test('Starting screen - Board size', ({ given, then, pending }) => {
+  test('Starting screen - Board size', ({ given, then }) => {
     given('the player opens the game', () => {
       steps.openTheGame()
     })
@@ -13,12 +13,12 @@ defineFeature(feature, (test) => {
     })
   })
 
-  test('Starting screen - All the cards should be covered', ({ given, then, pending }) => {
+  test('Starting screen - All the cards should be covered', ({ given, then }) => {
     given('the player opens the game', () => {
-      pending()
+      steps.openTheGame()
     })
     then('all the cards should be covered', () => {
-      pending()
+      expect(steps.areCardsCovered()).toBe(true)
     })
   })
 
