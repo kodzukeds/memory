@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import Game from '../../src/components/game'
+import Game from '../../src/components/Game'
 
 export function openTheGame () {
   render(<Game />)
@@ -11,6 +11,12 @@ export function boardSize (rows, columns) {
 }
 
 export function areCardsCovered () {
-  const cards = document.getElementById('[data-testid="card"]')
-  return cards.getElementsByClassName('covered').length === cards.length
+  const cards = document.querySelectorAll('[data-testid="card"]')
+  cards.forEach(card => {
+    if (!card.classList.contains('covered')) {
+      return false
+    }
+  })
+
+  return true
 }
