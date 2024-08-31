@@ -8,6 +8,7 @@ defineFeature(feature, (test) => {
     given('the player opens the game', () => {
       steps.openTheGame()
     })
+
     then(/^the board should have "(.*)" rows and "(.*)" columns$/, (rows, columns) => {
       expect(steps.boardSize(rows, columns)).toBe(true)
     })
@@ -17,6 +18,7 @@ defineFeature(feature, (test) => {
     given('the player opens the game', () => {
       steps.openTheGame()
     })
+
     then('all the cards should be covered', () => {
       expect(steps.areCardsCovered()).toBe(true)
     })
@@ -24,107 +26,95 @@ defineFeature(feature, (test) => {
 
   test('Uncovering a card', ({ given, when, then, pending }) => {
     given('the player opens the game', () => {
+      steps.openTheGame()
+    })
+
+    when('the player left clicks on the card ("0", "0")', () => {
       pending()
     })
-    when('the player left clicks on a card', () => {
-      pending()
-    })
+
     then('the card should be uncovered', () => {
       pending()
     })
   })
 
-  test('Uncovering a card - Uncovering the second card', ({ given, when, then, pending }) => {
-    given('the player opens the game', () => {
+  test('Uncovering a card - Displaying the card symbol', ({ given, when, then, pending }) => {
+    given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    given('the player uncovers a card', () => {
+
+    when('the player left clicks on the card ("0", "0")', () => {
       pending()
     })
-    when('there are two cards uncovered', () => {
-      pending()
-    })
-    then('the card should be uncovered', () => {
-      pending()
-    })
-    then('the first card should remain uncovered', () => {
+
+    then('the card should show the symbol "0"', () => {
       pending()
     })
   })
 
-  test('Uncovering a card - Displaying the card symbol', ({ given, then, pending }) => {
-    given('the player opens the game', () => {
+  test('Uncovering a card - Trying to uncover a card already uncovered', ({ given, when, then, pending }) => {
+    given('the player left clicks on the card ("0", "0")', () => {
       pending()
     })
-    given('the player uncovers a card', () => {
-      pending()
-    })
-    then('the card should show a symbol', () => {
-      pending()
-    })
-  })
 
-  test('Uncovering a card - Matching card symbols', ({ given, and, when, then, pending }) => {
-    given('the player opens the game', () => {
+    when('the player left clicks on the card ("0", "0")', () => {
       pending()
     })
-    given('the player uncovers a card', () => {
-      pending()
-    })
-    and('the card shows a symbol', () => {
-      pending()
-    })
-    when('there are two cards uncovered', () => {
-      pending()
-    })
-    then('the game should check if their symbols match', () => {
-      pending()
-    })
-  })
 
-  test('Uncovering a card - Trying to uncover a card already uncovered', ({ given, and, then, pending }) => {
-    given('the player opens the game', () => {
-      pending()
-    })
-    given('the player uncovers a card', () => {
-      pending()
-    })
-    and('the card is already uncovered', () => {
-      pending()
-    })
     then('the card should remain uncovered', () => {
       pending()
     })
   })
 
-  test('Covering a card', ({ given, when, and, then, pending }) => {
-    given('the player opens the game', () => {
+  test('Uncovering a second card - The two cards are the same', ({ given, when, then, pending }) => {
+    given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    given('the player uncovers a card', () => {
+
+    when('the player uncovers the first card ("0", "0")', () => {
       pending()
     })
-    when('there are two cards uncovered', () => {
+
+    when('the player uncovers the second card ("0", "1")', () => {
       pending()
     })
-    and('their symbols don\'t match', () => {
+
+    then('the card should be uncovered', () => {
       pending()
     })
+  })
+
+  test('Uncovering a second card - The two cards are different', ({ given, when, then, pending }) => {
+    given('the player loads the following mock data', (mockData) => {
+      pending()
+    })
+
+    when('the player uncovers the first card ("0", "0")', () => {
+      pending()
+    })
+
+    when('the player uncovers the second card ("0", "1")', () => {
+      pending()
+    })
+
     then('the cards should be covered', () => {
       pending()
     })
   })
 
   test('Uncovering all the cards - Winning the game', ({ given, when, then, pending }) => {
-    given('the player opens the game', () => {
+    given('the player loads the following mock data', (mockData) => {
       pending()
     })
-    given('the player uncovers a card', () => {
+
+    when('the player uncovers the first card ("0", "0")', () => {
       pending()
     })
-    when('all the cards are uncovered', () => {
+
+    when('the player uncovers the second card ("0", "1")', () => {
       pending()
     })
+
     then('the player should win the game', () => {
       pending()
     })
