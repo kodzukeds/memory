@@ -24,21 +24,25 @@ defineFeature(feature, (test) => {
     })
   })
 
-  test('Uncovering a card', ({ given, when, then, pending }) => {
+  test('Uncovering a card', ({ given, when, then }) => {
     given('the player opens the game', () => {
       steps.openTheGame()
     })
 
     when('the player left clicks on the card ("0", "0")', () => {
-      pending()
+      steps.clickCard(0, 0)
     })
 
     then('the card should be uncovered', () => {
-      pending()
+      expect(steps.isCardUncovered(0, 0)).toBe(true)
     })
   })
 
   test('Uncovering a card - Displaying the card symbol', ({ given, when, then, pending }) => {
+    given('the player opens the game', () => {
+      steps.openTheGame()
+    })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
@@ -53,6 +57,10 @@ defineFeature(feature, (test) => {
   })
 
   test('Uncovering a card - Trying to uncover a card already uncovered', ({ given, when, then, pending }) => {
+    given('the player opens the game', () => {
+      steps.openTheGame()
+    })
+
     given('the player left clicks on the card ("0", "0")', () => {
       pending()
     })
@@ -67,6 +75,10 @@ defineFeature(feature, (test) => {
   })
 
   test('Uncovering a second card - The two cards are the same', ({ given, when, then, pending }) => {
+    given('the player opens the game', () => {
+      steps.openTheGame()
+    })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
@@ -84,7 +96,11 @@ defineFeature(feature, (test) => {
     })
   })
 
-  test('Uncovering a second card - The two cards are different', ({ given, when, then, pending }) => {
+  test('Uncovering a second card - The two cards are different', ({ given, when, and, then, pending }) => {
+    given('the player opens the game', () => {
+      steps.openTheGame()
+    })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
@@ -93,7 +109,7 @@ defineFeature(feature, (test) => {
       pending()
     })
 
-    when('the player uncovers the second card ("0", "1")', () => {
+    and('the player uncovers the second card ("0", "1")', () => {
       pending()
     })
 
@@ -103,6 +119,10 @@ defineFeature(feature, (test) => {
   })
 
   test('Uncovering all the cards - Winning the game', ({ given, when, then, pending }) => {
+    given('the player opens the game', () => {
+      steps.openTheGame()
+    })
+
     given('the player loads the following mock data', (mockData) => {
       pending()
     })
